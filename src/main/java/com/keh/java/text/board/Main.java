@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-
+    int articleLastId = 0;
     System.out.println("== 자바 텍스트 게시판 ==");
 
     while (true) {
@@ -19,8 +19,10 @@ public class Main {
         System.out.print("내용 : ");
         String content = sc.nextLine();
 
-        int id = 1;
+        int id = ++articleLastId;
+        
         System.out.printf("%d번 게시물이 등록되었습니다.\n", id);
+
       } else if (cmd.equals("exit")) {
         System.out.println("== 자바 텍스트 게시판 종료 ==");
         break;
